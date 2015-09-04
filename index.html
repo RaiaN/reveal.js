@@ -194,9 +194,11 @@
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: true,
-				progress: true,
+				progress: false,
 				history: true,
 				center: true,
+				slideNumber: true,
+				hideAddressBar: true,
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
@@ -210,6 +212,15 @@
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
+
+			window.addEventListener("mousedown", handleClick, false);
+			window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
+
+			function handleClick(e) {
+				e.preventDefault();
+				if(e.button === 0) Reveal.next(); 
+				if(e.button === 2) Reveal.prev(); 
+			}
 
 		</script>
 
