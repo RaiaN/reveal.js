@@ -41,7 +41,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section data-background="#FFFFFF">
-					<h2>16S ribosomal RNA genes annotation in metagenomic assembly</h2>
+					<h3>Metagenomic assembly and annotation of 16S ribosomal RNA genes by SPAdes</h3>
                     <p>
 						<h7>Created by <a href="https:/ru.linkedin.com/pub/peter-leontev/63/348/67b">Peter Leontev</a></small><br>
                         Scientific advisor: <br>Sergey Nurk, Algorithmic biology lab</h7>
@@ -49,7 +49,7 @@
 				</section>
 
 				<section data-background="#FFFFFF">
-					<h2>Purpose</h2>
+					<h3>Purpose</h3>
 					<p>
 						Extract 16S rRNA genes and corresponding information from metagenomic assembly
 					</p>
@@ -58,19 +58,19 @@
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
-						<h2>Why?</h2>
+						<h3>Why?</h3>
 						<p>16S rRNA genes are very important in molecular phylogeny due to slow evolution rates of their regions</p>
 					</section>
 					<section>
-						<h2>One great example [deprecated]</h2>
+						<h3>One great example [deprecated]</h3>
                         <a> 
                             <img height="450" data-src="img/woese_tree_of_life_16s.png"</img>
                         </a>
 						<p>Woese et al. (1990)</p>
 					</section>
 					<section>
-						<h2>Contemporary view</h2>
-						<a href="#/2">
+						<h3>Contemporary view</h3>
+						<a>
 							<img width="600" height="450" data-src="img/tree_of_life_new.jpg"</img>
 						</a>
                         <p>Christopher et al. (2015)</p>
@@ -78,177 +78,63 @@
 				</section>
 
 				<section>
-					<h2></h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
+                    <h3>Metagenomics in a nutshell</h3>
+					<a>    
+                        <img width="800" height="540" data-src="img/metagenomics_intro.png"</img>
+                    </a>
+                    <small>https://en.wikipedia.org/wiki/Metagenomics</small>                    
 				</section>
 
 				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
+                    <section>
+    					<h3>SPAdes 16S rRNA assembly for isolates</h3>
+    					<table>
+                            <thead>
+                                <tr>
+                                    <th>Organism</th>
+                                    <th>16S rRNA copies in genome</th>
+                                    <th>Assembled</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td align="center">Some bacteria</td>
+                                    <td align="center">2-15</td>
+                                    <td align="center">1+*</td>
+                                </tr>
+                            </tbody>
+                        </table><br>	
+                        <small>
+                            *This number depends on available sequencing information (mate-pair, PacBio reads, etc.)   
+                        </small>			
+                    </section>
+                    <section id="fragments">
+                        <h3>How to detect 16S rRNA?</h3><br>
+                        <ul>
+                            <li class="fragment">Easy: align known 16S rRNA to assembled contigs;</li>
+                            <li class="fragment"><strong>Much better</strong>: use discriminative model (like HMM) including both 1° and 2° structures.</li>
+                        </ul>
+                    </section>
+                </section>
+
+				<section>
+					<h3>Source of problems [exclude, probably]</h3>
+					<img height="500" width="950" data-src="img/msa_by_evol_distance.png"</img>
+                    <small>
+                        The same <br>1-3: order, 4-11: class, 12: phylum
+                    </small>
 				</section>
 
 				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
+                    <section>
+					    <h3>Correspondence between 16S rRNA in genome and in assembly graph</h3>
+				        <img data-src="img/correspondence.png" width="1000" height="500"</img>
+                    </section>
+                    <section>
+                        <h3>Bioinformatics reality</h3>
+                        <img data-src="img/assembly_graph.png" height="550" width="1240"></img>
+                    </section>
+                </section>
 
 				<section>
 					<h2>Fantastic Ordered List</h2>
