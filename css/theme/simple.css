@@ -273,3 +273,7 @@ body {
     font-size:0.3em;
     color: #000000;
 }
+
+html.img-right div.slide-background.present {
+    background-position: left;
+}
