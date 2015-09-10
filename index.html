@@ -40,7 +40,7 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section data-background="#FFFFFF">
+				<section>
 					<h3>Metagenomic assembly and annotation of 16S ribosomal RNA genes by SPAdes</h3>
                     <p>
 						<h7>Created by <a href="https:/ru.linkedin.com/pub/peter-leontev/63/348/67b">Peter Leontev</a></small><br>
@@ -48,46 +48,54 @@
 					</p>
 				</section>
 
-				<section data-background="#FFFFFF">
-					<h3>Purpose</h3>
+				<section>
+					<h3>The problem</h3>   
 					<p>
-						Extract 16S rRNA genes and corresponding information from metagenomic assembly
+						To achieve both better assembly and annotation of 16S rRNA genes 
 					</p>
 				</section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h3>Why?</h3>
-						<p>16S rRNA genes are very important in molecular phylogeny due to slow evolution rates of their regions</p>
-					</section>
-					<section>
-						<h3>One great example [deprecated]</h3>
+                <!-- Example of nested vertical slides -->
+                <section>
+                    <section>
+                        <h3>Why?</h3>
+                        <p>16S rRNA genes are very important in molecular phylogeny due to slow evolution rates of their regions</p>
+                    </section>
+                    <section>
+                        <h3>One great example [deprecated]</h3>
                         <a> 
                             <img height="450" data-src="img/woese_tree_of_life_16s.png"</img>
                         </a>
-						<p>Woese et al. (1990)</p>
-					</section>
-					<section>
-						<h3>Contemporary view</h3>
-						<a>
-							<img width="600" height="450" data-src="img/tree_of_life_new.jpg"</img>
-						</a>
-                        <p>Christopher et al. (2015)</p>
-					</section>
-				</section>
-
-				<section>
-                    <h3>Metagenomics in a nutshell</h3>
-					<a>    
-                        <img width="800" height="540" data-src="img/metagenomics_intro.png"</img>
-                    </a>
-                    <small>https://en.wikipedia.org/wiki/Metagenomics</small>                    
-				</section>
-
-				<section>
+                        <p>Woese et al. (1990)</p>
+                    </section>
                     <section>
-    					<h3>SPAdes 16S rRNA assembly for isolates</h3>
+                        <h3>Contemporary view</h3>
+                        <a>
+                            <img width="600" height="450" data-src="img/tree_of_life_new.jpg"</img>
+                        </a>
+                        <p>Christopher et al. (2015)</p>
+                    </section>
+                </section>
+
+                <section>
+                    <h3>The plan</h3>   
+                    <ul>
+                        <li>Collect statistics about 16S rRNA genes assembly on isolates's and metagenomic datasets</li>
+                        <li>Compare 16S rRNA genes assembled by SPAdes with other methods (if any) </li>
+                        <li>Come up with a way to annotate those genes using information from the assembly graph</li>
+                    </ul>
+                </section>
+
+				<section>
+                    <section id="fragments">
+                        <h3>How to detect 16S rRNA?</h3><br>
+                        <ul>
+                            <li class="fragment">Easy: align known 16S rRNA from existing DBs to assembled contigs;</li>
+                            <li class="fragment"><strong>Much better</strong>: use discriminative model (like HMM) including both 1° and 2° structures.</li>
+                        </ul>
+                    </section>
+                    <section>
+    					<h3>SPAdes 16S rRNA assembly statistics</h3>
     					<table>
                             <thead>
                                 <tr>
@@ -107,23 +115,27 @@
                         <small>
                             *This number depends on available sequencing information (mate-pair, PacBio reads, etc.)   
                         </small>			
-                    </section>
-                    <section id="fragments">
-                        <h3>How to detect 16S rRNA?</h3><br>
-                        <ul>
-                            <li class="fragment">Easy: align known 16S rRNA to assembled contigs;</li>
-                            <li class="fragment"><strong>Much better</strong>: use discriminative model (like HMM) including both 1° and 2° structures.</li>
-                        </ul>
-                    </section>
+                    </section>                    
                 </section>
 
-				<section>
-					<h3>Source of problems [exclude, probably]</h3>
-					<img height="500" width="950" data-src="img/msa_by_evol_distance.png"</img>
-                    <small>
-                        The same <br>1-3: order, 4-11: class, 12: phylum
-                    </small>
-				</section>
+                <section>
+                    <h3>Comparison of 16S rRNA from targeted assembly and from SPAdes contigs</h3><br>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="center">Expected number of 16S rRNA</th>
+                                <th align="center">Found in contigs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="center">1679</td>
+                                <td align="center">1368</td>
+                            </tr>
+                        </tbody>
+                    </table><br>
+                    <small>*311 missed 16S rRNA may be due to complex graph structures or simply misassemblies.</small>
+                </section>
 
 				<section>
                     <section>
@@ -137,9 +149,17 @@
                     </section>
                 </section>
 
+                <section>
+                    <h3>Source of problems</h3>
+                    <img height="500" width="950" data-src="img/msa_by_evol_distance.png"</img>
+                    <small>
+                        The same <br>1-3: order, 4-11: class, 12: phylum
+                    </small>
+                </section>
+
 				<section>
                     <section>
-                        <h2>Results</h2>
+                        <h2>Annotation results</h2>
                     </section>
                     <section>
 					   <h3>Simulated dataset metagenomic assembly </h3><br>
@@ -160,25 +180,8 @@
                             </tbody>
                         </table>
 				    </section>
-                    <section>
-                        <h3>Comparison of 16S rRNA from targeted assembly and from SPAdes contigs</h3><br>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th align="center">Expected number of 16S rRNA</th>
-                                    <th align="center">Found in contigs</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td align="center">1679</td>
-                                    <td align="center">1368</td>
-                                </tr>
-                            </tbody>
-                        </table><br>
-                        <small>*311 missed 16S rRNA may be due to complex graph structures or simply misassemblies.</small>
-                    </section>
                 </section>
+
                 <section>
                     <h2>THANK YOU!<h3>
                 </section>
