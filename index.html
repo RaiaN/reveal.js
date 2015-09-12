@@ -73,9 +73,80 @@
                     </ul>   
                 </section>
 
+                <section>
+					<h3>Direction I. Collaboration with JGI</h3>   
+                    <ul id="fragments">
+				        <br>
+				        <li class="fragment">Source: Natalia Ivanova group from Joint Genomic Institute which studies very specific metagenomic datasets;</li>
+				        <li class="fragment">Detection of unusual biology across different domains;</li>
+                        <li class="fragment">Target sequencing lacks sensivity but there is a need to get full-length 16S rRNA genes;</li>
+                        <li class="fragment">Additional challenge: necessity to get a genome information about the corresponding unusual group.</li>            
+                    </ul>
+				</section>
+
+                <section>
+                    <h3>Tasks</h3><br>   
+                    <ul id="fragments"> 
+                        <li class="fragment">Comparison of MetaSPAdes de novo and custom JGI pipeline assemblies.</li>
+                        <li class="fragment">Contigs binning to 16S rRNA via SPAdes assembly graph;</li>                        
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Quantitative comparison of<br> assembled 16S rRNA sequences</h3><br>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th align="center">Assembled by JGI custom pipeline</td>
+                                <th align="center">Covered by MetaSPAdes contigs</td>
+                            </tr>
+                        </thead>
+                        <tbody>                            
+                            <tr>
+                                <td align="center">1679</td>
+                                <td align="center">1368*</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <small>*Covered at least 80% of sequence. 1/5 missed 16S rRNA sequences have length less than 100 bp. </small>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Correspondence between 16S rRNA in the genome and in the assembly graph</h3>
+                        <img data-src="img/correspondence.jpg" width="1000" height="500"</img>
+                    </section>
+                    <section>   
+                        <h3>Bioinformatics reality</h3>
+                        <img data-src="img/assembly_graph.png" height="545" width="1240"></img>
+                        <small>https://github.com/rrwick/Bandage</small>
+                    </section>
+                </section>
+
+                <section>
+                    <h3>Detecting long contigs on isolates datasets</h3><br>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Isolated organism</th>
+                                <th>Long contigs* found</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="center">Some bacteria</td>
+                                <td align="center">~80%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <small>*Aka corresponding information about an unusual group</small>
+                </section>         
+
                 <section> 
                     <section>
-                        <h3>Direction I</h3>
+                        <h3>Direction II. Work in progress</h3>
                         <p>Assembly of full-length 16S rRNA genes via MetaSPAdes</p> 
                     </section>
 
@@ -137,81 +208,10 @@
                         <p>Implement these ideas in MetaSPAdes.</p>
                     </section>
 
-                </section>
-
-				<section>
-					<h3>Direction II. Collaboration with JGI</h3>   
-                    <ul id="fragments">
-				        <br>
-				        <li class="fragment">Source: Natalia Ivanova group from Joint Genomic Institute which studies very specific metagenomic datasets;</li>
-				        <li class="fragment">Detection of unusual biology across different domains;</li>
-                        <li class="fragment">Target sequencing lacks sensivity but there is a need to get full-length 16S rRNA genes;</li>
-                        <li class="fragment">Additional challenge: necessity to get a genome information about the corresponding unusual group.</li>            
-                    </ul>
-				</section>
+                </section>       
 
                 <section>
-                    <h3>Tasks</h3><br>   
-                    <ul id="fragments"> 
-                        <li class="fragment">Contigs binning to 16S rRNA via SPAdes assembly graph;</li>
-                        <li class="fragment">Comparison of MetaSPAdes de novo and custom JGI pipeline assemblies.</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <section>
-                        <h3>Correspondence between 16S rRNA in the genome and in the assembly graph</h3>
-                        <img data-src="img/correspondence.jpg" width="1000" height="500"</img>
-                    </section>
-                    <section>   
-                        <h3>Bioinformatics reality</h3>
-                        <img data-src="img/assembly_graph.png" height="545" width="1240"></img>
-                        <small>https://github.com/rrwick/Bandage</small>
-                    </section>
-                </section>
-
-                <section>
-                    <h3>Detecting long contigs on isolates datasets</h3><br>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Isolated organism</th>
-                                <th>Long contigs* found</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td align="center">Some bacteria</td>
-                                <td align="center">~80%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br>
-                    <small>*Aka corresponding information about an unusual group</small>
-                </section>
-
-                <section>
-                    <h3>Quantitative comparison of<br> assembled 16S rRNA sequences</h3><br>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th align="center">Assembled by JGI custom pipeline</td>
-                                <th align="center">Covered by MetaSPAdes contigs</td>
-                            </tr>
-                        </thead>
-                        <tbody>                            
-                            <tr>
-                                <td align="center">1679</td>
-                                <td align="center">1368*</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <br>
-                    <small>*Covered at least 80% of sequence. 1/5 missed 16S rRNA sequences have length less than 100 bp. 
-                </section>
-
-                <section>
-                    <h2>THANK YOU! QUESTIONS?<h2>
+                    <h2>THANK YOU! QUESTIONS?</h2>
                     <p><small><small> Hofstadter's Law: It always takes longer than you expect, even when you take into account Hofstadter's Law.</small></small></p>
                 </section>
 			</div>
