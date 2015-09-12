@@ -48,7 +48,7 @@
 					<h3>Metagenomic assembly and annotation of 16S ribosomal RNA genes by SPAdes</h3>
                     <p>
 						<h7>Created by <a href="https:/ru.linkedin.com/pub/peter-leontev/63/348/67b">Peter Leontev</a></small><br>
-                        Scientific advisor: <br>Sergey Nurk, Center For Algorithmic Biotechnology SPbSU</h7>
+                        Scientific advisors: <br>Sergey Nurk and Anton Korobeynikov, Center For Algorithmic Biotechnology SPbSU</h7>
 					</p>
 				</section>
 
@@ -75,12 +75,12 @@
 
                 <section> 
                     <section>
-                        <h3>Direction I. The problem</h3>
+                        <h3>Direction I</h3>
                         <p>Assembly of full-length 16S rRNA genes via MetaSPAdes</p> 
                     </section>
 
                     <section>
-                        <h3>Idea</h3>
+                        <h3>Simple case of assembly</h3>
                         <p>When 16S rRNA is in a contig then one can easily <i>detect</i> it using the following tools:</p>
                         <ul id="fragments">
                             <li class="fragment">Barrnap (based on <i>NHMMER</i>) makes use of the primary structure conservation;</li>
@@ -140,12 +140,12 @@
                 </section>
 
 				<section>
-					<h3>Direction II. The problem</h3>   
+					<h3>Direction II. Collaboration with JGI</h3>   
                     <ul id="fragments">
 				        <br>
 				        <li class="fragment">Source: Natalia Ivanova group from Joint Genomic Institute which studies very specific metagenomic datasets;</li>
 				        <li class="fragment">Detection of unusual biology across different domains;</li>
-                        <li class="fragment">Target sequencing lacks specificity but there is a need to get full-length 16S rRNA genes;</li>
+                        <li class="fragment">Target sequencing lacks sensivity but there is a need to get full-length 16S rRNA genes;</li>
                         <li class="fragment">Additional challenge: necessity to get a genome information about the corresponding unusual group.</li>            
                     </ul>
 				</section>
@@ -196,18 +196,18 @@
                         <thead>
                             <tr>
                                 <th align="center">Assembled by JGI custom pipeline</td>
-                                <th align="center">Assembled by MetaSPAdes</td>
+                                <th align="center">Covered by MetaSPAdes contigs</td>
                             </tr>
                         </thead>
                         <tbody>                            
                             <tr>
                                 <td align="center">1679</td>
-                                <td align="center">1368</td>
+                                <td align="center">1368*</td>
                             </tr>
                         </tbody>
                     </table>
                     <br>
-                    <small>*1/5 missed 16S rRNA sequences have length less than 100 bp. <br>This may happen due to complex graph structures or simply misassemblies.</small>
+                    <small>*Covered at least 80% of sequence. 1/5 missed 16S rRNA sequences have length less than 100 bp. 
                 </section>
 
                 <section>
